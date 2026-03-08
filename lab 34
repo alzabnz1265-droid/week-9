@@ -1,0 +1,16 @@
+import numpy as np
+from scipy import stats
+
+mu = 0
+sigma = 1
+dist = stats.norm(mu, sigma)
+a = -1
+b = 1
+prob_cdf = dist.cdf(b) - dist.cdf(a)
+
+trials = 10000
+samples = np.random.normal(mu, sigma, trials)
+prob_mc = np.mean((samples >= a) & (samples <= b))
+
+print("Probability from CDF:", prob_cdf)
+print("Probability from Monte Carlo:", prob_mc)
