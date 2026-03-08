@@ -1,0 +1,17 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+uniform_samples = np.random.uniform(0, 5, 50)
+normal_samples = np.random.normal(2, 1, 50)
+
+sns.histplot(uniform_samples, kde=True, color="blue", label="Uniform")
+sns.histplot(normal_samples, kde=True, color="red", label="Normal", alpha=0.5)
+plt.legend()
+plt.show()
+
+print("Uniform mean:", np.mean(uniform_samples))
+print("Uniform std:", np.std(uniform_samples))
+
+print("Normal mean:", np.mean(normal_samples))
+print("Normal std:", np.std(normal_samples))
