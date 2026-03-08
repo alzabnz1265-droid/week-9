@@ -1,0 +1,11 @@
+import numpy as np
+
+trials = 10000
+rolls = np.random.randint(1, 7, size=trials)  
+
+six_empirical = np.mean(rolls == 6)
+
+six_theoretical = 1/6
+
+print("empirical probability of 6 = ", six_empirical)
+print("theoretical probability = ", six_theoretical)
